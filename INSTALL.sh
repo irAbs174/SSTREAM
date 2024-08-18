@@ -1,0 +1,1 @@
+sudo apt update && sudo apt upgrade && sudo apt install locales locales-all && locale-gen fa_IR.UTF-8 && LANG fa_IR.UTF-8 && && && sudo apt install python3 python3-venv python3-pip && python3 -m venv env && source env/bin/activate && pip3 install --upgrade pip && pip3 install "kivy[base]" && pip3 install -r requirements.txt

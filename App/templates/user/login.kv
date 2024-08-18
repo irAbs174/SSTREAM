@@ -1,0 +1,15 @@
+<Login>:
+    name: "login"
+    md_bg_color: "lightblue"
+
+    MDLabel:
+        adaptive_height: True
+        text: "Login Page"
+        halign: "center"
+
+    MDButton:
+        text: "Go to Main"
+        pos_hint: {"center_x": .5}
+        y: "36dp"
+        on_release:
+            app.root.current = "main"
