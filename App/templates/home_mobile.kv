@@ -1,0 +1,113 @@
+MDScreen:
+    name: 'home_mobile'
+    theme_bg_color: "Custom"
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDCard:
+        style: 'elevated'
+        size_hint: .96, .07
+        pos_hint: {'center_x': .5, 'top': 1}
+        radius: [0, 0, 10, 10]
+        MDRelativeLayout:
+
+            MDCard:
+                style: 'filled'
+                size_hint: .95, .85
+                pos_hint: {"center_y": .5, "center_x": .5}
+                md_bg_color: self.theme_cls.primaryColor
+
+                MDRelativeLayout:
+
+                    MDLabel:
+                        halign: 'left'
+                        text: 'STREAM date..'
+
+                    MDCard:
+                        style: 'filled'
+                        size_hint: .2, .95
+                        pos_hint: {"center_y": .5, "center_x": .8}
+                        md_bg_color: self.theme_cls.primaryColor
+
+                        MDRelativeLayout:
+                            MDButton:
+                                size_hint: .45, .75
+                                pos_hint : {"center_y": .5, "center_x": .4}
+                                MDButtonIcon:
+                                    pos_hint : {"center_x": .5, "center_y": .5}
+                                    icon: "wallet-bifold-outline"
+                                    theme_font_size : "Custom"
+                                    font_size: "32dp"
+
+                            MDDivider:
+                                size_hint_y: .9
+                                pos_hint: {"center_x": .7, "center_y": .5}
+                                orientation: "vertical"
+
+                            MDButton:
+                                on_release: app.switch_theme()
+                                pos_hint : {"center_y": .5, "center_x": .99}
+                                MDButtonIcon:
+                                    pos_hint : {"center_x": .5, "center_y": .5}
+                                    icon: "theme-light-dark"
+                                    theme_font_size : "Custom"
+                                    font_size: "33dp"
+
+    MDCard:
+        style: 'elevated'
+        size_hint: .96, .85
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        radius: [10, 10, 10, 10]
+        MDRelativeLayout:
+
+            
+
+    MDCard:
+        style: 'elevated'
+        size_hint: .96, .07
+        pos_hint: {'center_x': .5, 'bottom': 1}
+        radius: [10, 10, 0, 0]
+
+        MDRelativeLayout:
+            MDButton:
+                style: 'filled'
+                pos_hint : {"center_y": .5, "center_x": .1}
+                MDButtonIcon:
+                    pos_hint : {"center_x": .5, "center_y": .5}
+                    icon: "home-circle-outline"
+                    theme_font_size : "Custom"
+                    font_size: "33dp"
+
+            MDButton:
+                on_release: app.load_screen('search_mobile', 'left')
+                pos_hint : {"center_y": .5, "center_x": .3}
+                MDButtonIcon:
+                    pos_hint : {"center_x": .5, "center_y": .5}
+                    icon: "heart-search"
+                    theme_font_size : "Custom"
+                    font_size: "33dp"
+
+            MDButton:
+                pos_hint : {"center_y": .5, "center_x": .5}
+                MDButtonIcon:
+                    pos_hint : {"center_x": .5, "center_y": .5}
+                    icon: "share"
+                    theme_font_size : "Custom"
+                    font_size: "33dp"
+
+            MDButton:
+                pos_hint : {"center_y": .5, "center_x": .7}
+                MDButtonIcon:
+                    pos_hint : {"center_x": .5, "center_y": .5}
+                    icon: "send-circle-outline"
+                    theme_font_size : "Custom"
+                    font_size: "33dp"
+
+            MDButton:
+                on_release:
+                    app.load_screen('account_mobile', 'left')
+                pos_hint : {"center_y": .5, "center_x": .9}
+                MDButtonIcon:
+                    pos_hint : {"center_x": .5, "center_y": .5}
+                    icon: "account-circle-outline"
+                    theme_font_size : "Custom"
+                    font_size: "33dp"

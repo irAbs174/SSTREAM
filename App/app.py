@@ -35,20 +35,20 @@ class App(MDApp):
         global sm
         sm = MDScreenManager()
         self.theme_cls.theme_style = "Dark"
-        self.theme_cls.primary_palette = "Gold"
+        self.theme_cls.primary_palette = "Lightcyan"
+
         self.titlebar_widget = False
         Window.minimum_height = 667
         Window.minimum_width = 375
         self.title = "SSTREAM"
-        sm.add_widget(Builder.load_file(f'templates/index.kv'))
+        sm.add_widget(Builder.load_file(f'templates/home_mobile.kv'))
+        sm.add_widget(Builder.load_file(f'templates/search_mobile.kv'))
+        sm.add_widget(Builder.load_file(f'templates/account_mobile.kv'))
         return sm
         
     # Load Screen function
-    def load_screen(self, screen):
-        if screen != 'index':
-            sm.add_widget(Builder.load_file(f'templates/{screen}.kv'))
-            sm.current = screen
-        else:
+    def load_screen(self, screen, td):
+            sm.transition.direction = td
             sm.current = screen
 
     # Switch theme dark/light
@@ -59,8 +59,8 @@ class App(MDApp):
             "Dark" if self.theme_cls.theme_style == "Light" else "Light"
         )
         self.theme_cls.primary_palette = (
-                    "Gold" if self.theme_cls.primary_palette == "Chocolate" else "Chocolate"
-                )
+            "Lightcyan" if self.theme_cls.primary_palette == "Darkgoldenrod" else "Darkgoldenrod"
+        )
 
 
 if __name__ == "__main__":
