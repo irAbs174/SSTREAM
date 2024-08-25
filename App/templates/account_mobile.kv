@@ -5,7 +5,7 @@ MDScreen:
 
     MDCard:
         style: 'elevated'
-        size_hint: .96, .07
+        size_hint: 1, .07
         pos_hint: {'center_x': .5, 'top': 1}
         radius: [0, 0, 10, 10]
         MDRelativeLayout:
@@ -20,7 +20,10 @@ MDScreen:
 
                     MDLabel:
                         halign: 'left'
-                        text: 'STREAM date..'
+                        text: ';) Live Stream'
+                        theme_font_size: 'Custom'
+                        font_size: '19dp'
+
 
                     MDCard:
                         style: 'filled'
@@ -54,24 +57,211 @@ MDScreen:
 
     MDCard:
         style: 'elevated'
-        size_hint: .96, .85
+        size_hint: .99, .85
         pos_hint: {'center_x': .5, 'center_y': .5}
         radius: [10, 10, 10, 10]
         MDRelativeLayout:
+            MDCard:
+                size_hint: 1, .3
+                pos_hint:{'center_x': .5,'top': 1}
+                MDRelativeLayout:
+                    FitImage:
+                        source: 'assets/bg.jpg'
+                    MDCard:
+                        style: 'elevated'
+                        size_hint: .1, .2
+                        pos_hint: {'center_x': .85, 'center_y': .85}
+                        MDRelativeLayout:    
+                            MDIcon:
+                                size_hint: 1, 1
+                                pos_hint: {'center_x': .5, 'center_y': .5}
+                                icon: 'account-edit-outline'
+                                theme_font_size: 'Custom'
+                                font_size: '32dp'
+                    
+            MDCard:
+                size_hint: 1, .69
+                pos_hint:{'center_x': .5,'bottom': 1}
+                MDRelativeLayout:
+                    MDCard:
+                        size_hint: .25, .15
+                        pos_hint: {'center_x': .85, 'center_y': .9}
+                        MDRelativeLayout:
+                            MDIcon:
+                                icon: 'rocket-launch'
+                                size_hint: 1, 1
+                                pos_hint: {'center_x': .5, 'center_y': .8 }
+                                theme_font_size: 'Custom'
+                                font_size: '27dp'
 
-            
+                            MDLabel:
+                                text: 'سطح:'
+                                adaptive_size: True
+                                size_hint: 1, 1
+                                pos_hint: {'center_x': .5, 'center_y': .4 }
+                                theme_font_size: 'Custom'
+                                theme_font_name: 'Custom'
+                                font_size: '23dp'
+                                font_name: 'nasalization'
+
+                            MDLabel:
+                                text: '۱'
+                                adaptive_size: True
+                                size_hint: 1, 1
+                                pos_hint: {'center_x': .5, 'center_y': .01 }
+                                theme_font_size: 'Custom'
+                                theme_font_name: 'Custom'
+                                font_name: 'nasalization'
+                                font_size: '19dp'
+
+
+
+                    MDCard:
+                        size_hint: .25, .15
+                        pos_hint: {'center_x': .15, 'center_y': .9}
+                        MDRelativeLayout:
+                            MDIcon:
+                                icon: 'target-account'
+                                size_hint: 1, 1
+                                pos_hint: {'center_x': .5, 'center_y': .8 }
+                                theme_font_size: 'Custom'
+                                font_size: '27dp'
+
+                            MDLabel:
+                                text: 'دنبال کننده:'
+                                adaptive_size: True
+                                size_hint: 1, 1
+                                pos_hint: {'center_x': .5, 'center_y': .4 }
+                                theme_font_size: 'Custom'
+                                theme_font_name: 'Custom'
+                                font_size: '23dp'
+                                font_name: 'nasalization'
+
+                            MDLabel:
+                                text: 'K 29'
+                                adaptive_size: True
+                                size_hint: 1, 1
+                                pos_hint: {'center_x': .5, 'center_y': .01 }
+                                theme_font_size: 'Custom'
+                                font_size: '19dp'
+
+                    MDCard:
+                        padding: '4dp'
+                        size_hint: .95, .11
+                        pos_hint: {'center_x': .5, 'center_y': .7}
+                        style: 'outlined'
+                        MDRelativeLayout:
+
+                        MDLabel:
+                            text: 'عباس دمرچیلو'
+                            adaptive_size: True
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            theme_font_name: 'Custom'
+                            theme_font_size: 'Custom'
+                            font_name: 'nasalization'
+                            font_size: '28dp'
+
+                        MDLabel:
+                            text: 'نام :‌'
+                            adaptive_size: True
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .66, "center_y": .5}
+                            theme_font_name: 'Custom'
+                            theme_font_size: 'Custom'
+                            font_name: 'nasalization'
+                            font_size: '23dp'
+
+                        MDIcon:
+                            icon: 'account'
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .62, "center_y": .5}
+
+                    MDCard:
+                        padding: '4dp'
+                        size_hint: .95, .11
+                        pos_hint: {'center_x': .5, 'center_y': .55}
+                        style: 'outlined'
+                        MDRelativeLayout:
+
+                        MDLabel:
+                            text: '09129585714'
+                            adaptive_size: True
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            theme_font_name: 'Custom'
+                            theme_font_size: 'Custom'
+                            font_name: 'nasalization'
+                            font_size: '25dp'
+
+                        MDLabel:
+                            text: 'همراه :‌'
+                            adaptive_size: True
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .66, "center_y": .5}
+                            theme_font_name: 'Custom'
+                            theme_font_size: 'Custom'
+                            font_name: 'nasalization'
+                            font_size: '23dp'
+
+                        MDIcon:
+                            icon: 'card-account-phone'
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .62, "center_y": .5}
+
+                    MDCard:
+                        padding: '4dp'
+                        size_hint: .95, .11
+                        pos_hint: {'center_x': .5, 'center_y': .4}
+                        style: 'outlined'
+                        MDRelativeLayout:
+
+                        MDLabel:
+                            text: '@Unique174'
+                            adaptive_size: True
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            theme_font_size: 'Custom'
+                            font_size: '21dp'
+
+                        MDLabel:
+                            text: 'شناسه :'
+                            adaptive_size: True
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .66, "center_y": .5}
+                            theme_font_name: 'Custom'
+                            theme_font_size: 'Custom'
+                            font_name: 'nasalization'
+                            font_size: '23dp'
+
+                        MDIcon:
+                            icon: 'card-account-phone'
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .62, "center_y": .5}
+
+            MDCard:
+                id: profile_pic
+                size_hint: .4, .3
+                pos_hint:{'center_x': .5,'center_y': .7}
+                radius: [75, 75, 75, 75]
+
+                FitImage:
+                    size_hint: 1, 1
+                    pos_hint:{'center_x': .5,'center_y': .5}
+                    source: 'assets/bg.jpg'
+                    radius: [75, 75, 75, 75]
 
     MDCard:
         style: 'elevated'
-        size_hint: .96, .07
+        size_hint: 1, .07
         pos_hint: {'center_x': .5, 'bottom': 1}
         radius: [10, 10, 0, 0]
 
         MDRelativeLayout:
             MDButton:
-                pos_hint : {"center_y": .5, "center_x": .1}
                 on_release:
                     app.load_screen('home_mobile', 'right')
+                pos_hint : {"center_y": .5, "center_x": .1}
                 MDButtonIcon:
                     pos_hint : {"center_x": .5, "center_y": .5}
                     icon: "home-circle-outline"

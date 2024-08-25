@@ -5,7 +5,7 @@ MDScreen:
 
     MDCard:
         style: 'elevated'
-        size_hint: .96, .07
+        size_hint: 1, .07
         pos_hint: {'center_x': .5, 'top': 1}
         radius: [0, 0, 10, 10]
         MDRelativeLayout:
@@ -20,7 +20,10 @@ MDScreen:
 
                     MDLabel:
                         halign: 'left'
-                        text: 'STREAM date..'
+                        text: ';) Live Stream'
+                        theme_font_size: 'Custom'
+                        font_size: '19dp'
+
 
                     MDCard:
                         style: 'filled'
@@ -54,16 +57,103 @@ MDScreen:
 
     MDCard:
         style: 'elevated'
-        size_hint: .96, .85
+        size_hint: .99, .85
         pos_hint: {'center_x': .5, 'center_y': .5}
         radius: [10, 10, 10, 10]
         MDRelativeLayout:
+            MDCard:
+                size_hint: 4, .06
+                pos_hint: {'center_x': .5, 'top': 1}
+                radius: [0, 0, 0, 0]
+                MDRelativeLayout:
+                    MDIcon:
+                        icon: "tooltip-plus-outline"
+                        size_hint: .99, .99
+                        pos_hint: {"center_x": .5, "center_y": .5}
+                            
 
-            
+            MDCard:
+                style: 'elevated'
+                size_hint: .99, .93
+                pos_hint: {'center_x': .5, 'bottom': .9}
+                MDRelativeLayout:
+                    MDSwiper:
+                        height: root.height - dp(40)
+                        MDSwiperItem:
+                            height: root.height - dp(40)
+                            y: root.height - self.height - dp(20)
+
+                            MDRelativeLayout:
+
+                                MDSliverAppbarHeader:
+                                    size_hint: .95, .95
+                                    pos_hint: {'center_x': .5, 'bottom': 1}
+                                    MDCard:
+                                        size_hint: 1, 1
+                                        pos_hint: {'center_x': .5, 'center_y': .5}
+                                        MDRelativeLayout:
+                                            FitImage:
+                                                source: "assets/bg.jpg"
+                                                radius: [15, 15, 15, 15]
+                                            MDCard:
+                                                adaptive_size: True
+                                                size_hint: .6, .17
+                                                pos_hint: {'center_x': .5, 'center_y': .1}
+                                                MDRelativeLayout:
+                                                    MDIcon:
+                                                        icon: 'wechat'
+                                                        pos_hint: {'center_x': .5, 'center_y': .65}
+                                                        theme_font_size: 'Custom'
+                                                        font_size: '33dp'
+                                                    MDLabel:
+                                                        text: 'اتاق عمومی'
+                                                        adaptive_size: True
+                                                        size_hint: 1, 1
+                                                        pos_hint: {'center_x': .5, 'center_y': .35}
+                                                        theme_font_name: 'Custom'
+                                                        theme_font_size: 'Custom'
+                                                        font_name: 'nasalization'
+                                                        font_size: '36dp'
+
+
+
+                                MDSliverAppbarContent:
+                                    size_hint: .9, .09
+                                    pos_hint: {'center_x': .5, 'top': 1}
+                                    radius: [15, 15, 15, 15]
+                                    MDCard:
+                                        size_hint: 1, 1
+                                        pos_hint: {'center_x': .5, 'center_y': .5}
+
+                                        MDRelativeLayout:
+
+                                            MDIcon:
+                                                icon: 'account-group-outline'
+                                                size_hint: .02, .95
+                                                pos_hint: {'center_x': .1, 'center_y': .5}
+
+                                            MDLabel:
+                                                text: 'کابران آنلاین: 25 نفر'
+                                                theme_font_name:'Custom'
+                                                font_name: 'nasalization'
+                                                theme_font_size:'Custom'
+                                                font_size:'24dp'
+                                                adaptive_size: True
+                                                size_hint: .02, .95
+                                                pos_hint: {'center_x': .5, 'center_y': .5}
+
+                                            MDButton:
+                                                size_hint: .04, .9
+                                                pos_hint: {'center_x': .95, 'center_y': .5}
+
+                                                MDButtonIcon:
+                                                    icon: 'cards-heart-outline'
+                                                    size_hint: 1, 1
+                                                    pos_hint: {'center_x': .5, 'center_y': .5}  
 
     MDCard:
         style: 'elevated'
-        size_hint: .96, .07
+        size_hint: 1, .07
         pos_hint: {'center_x': .5, 'bottom': 1}
         radius: [10, 10, 0, 0]
 
