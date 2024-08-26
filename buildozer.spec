@@ -7,19 +7,19 @@ title = sstream
 package.name = sstream
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.sstream
 
 # (str) Source code where the main.py live
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,otf
+source.include_exts = 
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*,fonts/*
+source.include_patterns = assets/*,fonts/*,templates/*
 
 # (list) Source files to exclude (let empty to not exclude anything)
-source.exclude_exts = INSTALL.sh
+#source.exclude_exts = INSTALL.sh
 
 # (list) List of directory to exclude (let empty to not exclude anything)
 #source.exclude_dirs = tests, bin, venv
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.3.0,kivymd,kivyir,pillow
+requirements = python3.11.2,kivy==2.3.0,kivyir,pillow,https://github.com/kivymd/KivyMD/archive/master.zip
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -95,7 +95,7 @@ fullscreen = 0
 
 # (list) Permissions
 # (See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
-#android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
+android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host

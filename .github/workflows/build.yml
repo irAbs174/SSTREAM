@@ -1,28 +1,79 @@
-name: Build
+name: SStream Build
+
 on:
   push:
+    branches:
+      - main
 
 jobs:
-# Build job. Builds app for Android with Buildozer
-  build-android:
-    name: Build for Android
+  build:
     runs-on: ubuntu-latest
-  
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install dep
-        run: sudo apt install libtool
-  
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          buildozer_version: stable
-  
-      - name: Upload artifacts
+          python-version: 3.11.2
+
+      - name: Install Java
+        run: |
+          sudo add-apt-repository ppa:linuxuprising/java -y \
+          sudo apt install update \
+          sudo apt install oracle-java17-installer -y
+
+      - name: Install os dependencies
+        run: |
+          !sudo apt-get install -y \
+          python3-pip \
+          build-essential \
+          git \
+          python3.11.2 \
+          python3-dev \
+          ffmpeg \
+          libsdl2-dev \
+          libsdl2-image-dev \
+          libsdl2-mixer-dev \
+          libsdl2-ttf-dev \
+          libportmidi-dev \
+          libswscale-dev \
+          libavformat-dev \
+          libavcodec-dev \
+          zlib1g-dev \
+          libgstreamer1.0 \
+          gstreamer1.0-plugins-base \
+          gstreamer1.0-plugins-good \
+          build-essential \
+          libsqlite3-dev \
+          sqlite3 bzip2 \
+          libbz2-dev \
+          zlib1g-dev \
+          libssl-dev \
+          openssl \
+          libgdbm-dev \
+          libgdbm-compat-dev \
+          liblzma-dev \
+          libreadline-dev \
+          libncursesw5-dev \
+          libffi-dev \
+          uuid-dev \
+          libffi7 \
+          libffi-dev \
+          libtool
+
+      - name: Install python requirements
+        run: |
+          pip3 install --upgrade pip \
+          pip3 install -r requirements.txt
+
+      - name: Build app
+        run: |
+          buildozer android debug
+
+      - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
-          name: package
-          path: ${{ steps.buildozer.outputs.filename }}
+          name: app
+          path: bin/*.apk
