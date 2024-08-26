@@ -13,11 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.11.2
-
       - name: Install os dependencies
         run: |
           !sudo apt-get install -y \
@@ -57,7 +52,7 @@ jobs:
           libffi-dev \
           libtool
 
-      - name: Install python requirements
+      - name: Set up Python
         run: |
           pip3 install --upgrade pip \
           pip3 install -r requirements.txt
