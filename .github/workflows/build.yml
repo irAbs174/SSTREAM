@@ -18,11 +18,6 @@ jobs:
         with:
           python-version: 3.11.2
 
-      - name: Install Java
-        run: |
-          sudo add-apt-repository ppa:linuxuprising/java -y \
-          sudo apt-get update && sudo apt-get install oracle-java17-installer
-
       - name: Install os dependencies
         run: |
           !sudo apt-get install -y \
