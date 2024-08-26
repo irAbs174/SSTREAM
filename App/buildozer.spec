@@ -6,13 +6,13 @@
 [app]
 
 # (str) Title of your application
-title = Live Strean
+title = livestream
 
 # (str) Package name
-package.name = lovestream
+package.name = livestream
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.lovestream
+package.domain = org.livestream
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -42,7 +42,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.11.6, hostpython3, kivy==2.3.0, kivymd==2.0.0, pillow, kivyir
+requirements = python3==3.11.6, hostpython3, kivy[base], https://github.com/kivymd/KivyMD/archive/master.zip, pillow, kivyir
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
