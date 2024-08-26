@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Install dep
+        run: apt install libtool
   
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
